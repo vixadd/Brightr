@@ -1,9 +1,0 @@
-/**
- * 
- */
-/**
- * @author kroelld
- *
- */
-module Brightr {
-}

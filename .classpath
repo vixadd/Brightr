@@ -7,6 +7,7 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/java-openjfx-11.x"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/javafx-sdk-11"/>
 	<classpathentry kind="lib" path="/home/kroelld/Downloads/javafx-sdk-11.0.1/lib/javafx.base.jar">
 		<attributes>
 			<attribute name="module" value="true"/>
