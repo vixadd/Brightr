@@ -1,1 +1,11 @@
 <!-   Copyright 2018 David Kroell ->
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.embed.swing.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+

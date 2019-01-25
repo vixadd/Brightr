@@ -15,6 +15,12 @@
 ////////////////////////////////////////////////////////////////////////////////
 package com.vixadd.brightr;
 
+import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
 
 /**
  * The Main application that gets run to launch
@@ -22,6 +28,16 @@ package com.vixadd.brightr;
  * 
  * @author kroelld
  */
-public class Main {
+public class Main extends Application {
 
+	@Override
+	public void start(Stage primaryStage) throws Exception {
+		FXMLLoader loader = new FXMLLoader(getClass().getResource("view/Calculatorview.fxml"));
+		
+	}
+	
+	public static void main(String args[]) {
+		launch();
+	}
+	
 }
