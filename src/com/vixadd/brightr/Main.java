@@ -16,11 +16,19 @@
 package com.vixadd.brightr;
 
 import javafx.application.Application;
+
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
+
+import javafx.geometry.Insets;
+
+import javafx.beans.value.ObservableValue;
+import javafx.beans.value.ChangeListener;
+
 import javafx.scene.Scene;
-import javafx.scene.layout.AnchorPane;
+import javafx.scene.control.Slider;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+import javafx.scene.control.Label;
 
 /**
  * The Main application that gets run to launch
@@ -32,8 +40,35 @@ public class Main extends Application {
 
 	@Override
 	public void start(Stage primaryStage) throws Exception {
-		FXMLLoader loader = new FXMLLoader(getClass().getResource("view/Calculatorview.fxml"));
 		
+		Label label = new Label("Select Brightness Level:");
+		Slider slider = new Slider();
+		
+		// Slider configuration.
+		slider.setMin(0);
+		slider.setMax(100);
+		slider.setValue(80);
+		slider.setShowTickLabels(true);
+		slider.setShowTickMarks(true);
+		
+		slider.valueProperty().addListener(new ChangeListener<Number>() {
+			
+			@Override
+			public void changed(ObservableValue<? extends Number> observable, Number oldValue, Number newValue) {
+				
+			}
+		});
+		
+		// Root configuration.
+		slider.setBlockIncrement(10);
+		VBox root = new VBox();
+		root.setPadding(new Insets(20));
+		root.setSpacing(10);
+		root.getChildren().addAll(label, slider);
+		
+		// Display the primary stage.
+		primaryStage.setScene(new Scene(root, 300, 100));
+		primaryStage.show();
 	}
 	
 	public static void main(String args[]) {
