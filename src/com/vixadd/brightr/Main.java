@@ -54,7 +54,9 @@ public class Main extends Application {
 		slider.valueProperty().addListener(new ChangeListener<Number>() {
 			
 			@Override
-			public void changed(ObservableValue<? extends Number> observable, Number oldValue, Number newValue) {
+			public void changed(ObservableValue<? extends Number> observable,
+								Number oldValue,
+								Number newValue) {
 				
 			}
 		});
