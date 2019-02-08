@@ -73,6 +73,7 @@ public class Main extends Application {
 					stdScriptCall = new BufferedReader(
 							new InputStreamReader(mScriptProcess.getErrorStream())
 							);
+					
 				} catch (IOException e) {
 					System.err.println(e.getMessage());
 				}
@@ -93,6 +94,10 @@ public class Main extends Application {
 	
 	public static void main(String args[]) {
 		launch(); // Launch the application
+	}
+	
+	public static BufferedReader getScriptCall() {
+		return stdScriptCall;
 	}
 	
 	private static BufferedReader stdScriptCall;
