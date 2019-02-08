@@ -17,8 +17,6 @@ package com.vixadd.brightr;
 
 import javafx.application.Application;
 
-import javafx.fxml.FXMLLoader;
-
 import javafx.geometry.Insets;
 
 import javafx.beans.value.ObservableValue;
@@ -29,6 +27,11 @@ import javafx.scene.control.Slider;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import javafx.scene.control.Label;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
 
 /**
  * The Main application that gets run to launch
@@ -57,7 +60,22 @@ public class Main extends Application {
 			public void changed(ObservableValue<? extends Number> observable,
 								Number oldValue,
 								Number newValue) {
-				// Script stuff.
+				try {
+					// Run unix based command using the runtime exec method:
+					mScriptProcess = Runtime.getRuntime().exec("");
+				
+					// 
+					stdScriptCall = new BufferedReader(
+							new InputStreamReader(mScriptProcess.getInputStream())
+							);
+					
+					// Errored scream to debug.
+					stdScriptCall = new BufferedReader(
+							new InputStreamReader(mScriptProcess.getErrorStream())
+							);
+				} catch (IOException e) {
+					System.err.println(e.getMessage());
+				}
 			}
 		});
 		
@@ -76,5 +94,8 @@ public class Main extends Application {
 	public static void main(String args[]) {
 		launch(); // Launch the application
 	}
+	
+	private static BufferedReader stdScriptCall;
+	private static Process mScriptProcess = null;
 	
 }
