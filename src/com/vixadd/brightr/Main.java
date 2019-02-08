@@ -57,7 +57,7 @@ public class Main extends Application {
 			public void changed(ObservableValue<? extends Number> observable,
 								Number oldValue,
 								Number newValue) {
-				
+				// Script stuff.
 			}
 		});
 		
