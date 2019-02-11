@@ -26,6 +26,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Slider;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 import javafx.scene.control.Label;
 
 import java.io.BufferedReader;
@@ -87,9 +88,20 @@ public class Main extends Application {
 		root.setSpacing(10);
 		root.getChildren().addAll(label, slider);
 		
-		// Display the primary stage.
+		// Add a listener to close the window if you click outside it's borders.
+		primaryStage.focusedProperty().addListener((obs, wasFocused,  isNowFocused) -> {
+			if(wasFocused) {
+				if(!isNowFocused) {
+					System.out.println("close the window.");
+				}
+			}
+		});
+		
+		// Display the screen brightness mode for your screen.
+		primaryStage.initStyle(StageStyle.UNDECORATED);
 		primaryStage.setScene(new Scene(root, 300, 100));
 		primaryStage.show();
+		
 	}
 	
 	public static void main(String args[]) {
