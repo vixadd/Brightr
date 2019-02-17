@@ -91,7 +91,7 @@ public class Main extends Application {
 		// Add a listener to close the window if you click outside it's borders.
 		primaryStage.focusedProperty().addListener((obs, wasFocused,  isNowFocused) -> {
 			if(wasFocused) {
-				if(!isNowFocused) {
+				if(wasFocused && !isNowFocused) {
 					System.out.println("close the window.");
 				}
 			}
